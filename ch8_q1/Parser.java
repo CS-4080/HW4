@@ -578,4 +578,20 @@ class Parser {
     }
 //< synchronize
 
+    Expr parseReplExpression() {
+        try {
+            Expr expr = expression();
+
+            if(match(TokenType.SEMICOLON)) {
+
+            }
+
+            consume(TokenType.EOF, "Expect end of input.");
+            return expr;
+        } catch (ParseError e) {
+            return null;
+        }
+
+    }
+
 }
